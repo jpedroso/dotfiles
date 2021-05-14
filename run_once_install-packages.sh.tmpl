@@ -1,0 +1,61 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/sh
+
+# Install homebrew if it doesn't exist yet
+[ -z "$(which brew)" ] &&
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Homebrew packages
+{{ $brews := list
+    "zsh"
+    "starship"
+    "bat"
+    "tmux"
+    "fzf"
+    "exa"
+    "ripgrep"
+    "wget"
+    "htop"
+    "neovim"
+    "git"
+    "git-flow"
+    "git-delta"
+    "gh"
+    "rbenv"
+    "ruby-build"
+  -}}
+
+# Homebrew casks
+{{ $casks := list
+    "iterm2"
+    "spotify"
+    "slack"
+    "visual-studio-code"
+    "maccy"
+    "transmit"
+    "1password"
+    "1password-cli"
+  -}}
+
+# Homebrew fonts
+{{ $fonts := list
+    "font-iosevka-nerd-font"
+    "font-blex-mono-nerd-font"
+    "font-hack-nerd-font"
+  -}}
+
+# Install packages
+{{ range ($brews | sortAlpha | uniq) -}}
+  brew install "{{ . }}"
+{{ end -}}
+
+# Install casks
+{{ range ($casks | sortAlpha | uniq) -}}
+  brew install --cask "{{ . }}"
+{{ end -}}
+
+# Install fonts
+{{ range ($fonts | sortAlpha | uniq) -}}
+  brew install --cask "{{ . }}"
+{{ end -}}
+{{ end -}}
