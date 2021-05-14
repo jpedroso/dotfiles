@@ -23,7 +23,7 @@
     "gh"
     "rbenv"
     "ruby-build"
-    "curl"
+    "elixir"
   -}}
 
 # Homebrew casks
@@ -46,7 +46,7 @@
 {{ if .personal -}}
   {{ $brews = concat $brews  (list
     "youtube-dl"
-    "ffmpeg"
+    "rconroy293/seventeenlands/seventeenlands"
   )}}
 
   {{ $casks = concat $casks  (list
@@ -63,6 +63,8 @@
   {{ $brews = concat $brews  (list
     "ansible"
     "awscli"
+    "node"
+    "yarn"
   )}}
 {{ end -}}
 
