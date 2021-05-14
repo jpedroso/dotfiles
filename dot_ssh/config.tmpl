@@ -1,0 +1,9 @@
+{{- if eq .chezmoi.os "darwin" }}
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+{{- end }}
+
+Host pihole
+  HostName 192.168.1.100
+  User pi
