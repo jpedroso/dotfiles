@@ -23,16 +23,14 @@
     "gh"
     "rbenv"
     "ruby-build"
+    "curl"
   -}}
 
 # Homebrew casks
 {{ $casks := list
     "iterm2"
-    "spotify"
     "slack"
     "visual-studio-code"
-    "maccy"
-    "transmit"
     "1password"
     "1password-cli"
   -}}
@@ -43,6 +41,30 @@
     "font-blex-mono-nerd-font"
     "font-hack-nerd-font"
   -}}
+
+# Packages only installed on personal computers (see .chezmoi.toml.tmpl)
+{{ if .personal -}}
+  {{ $brews = concat $brews  (list
+    "youtube-dl"
+    "ffmpeg"
+  )}}
+
+  {{ $casks = concat $casks  (list
+    "spotify"
+    "telegram"
+    "vlc"
+    "maccy"
+    "transmit"
+  )}}
+{{ end -}}
+
+# Packages only installed on work computers (see .chezmoi.toml.tmpl)
+{{ if .work -}}
+  {{ $brews = concat $brews  (list
+    "ansible"
+    "awscli"
+  )}}
+{{ end -}}
 
 # Install packages
 {{ range ($brews | sortAlpha | uniq) -}}

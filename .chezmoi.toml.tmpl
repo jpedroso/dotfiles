@@ -1,0 +1,6 @@
+{{ $personal := promptBool "Is this a personal machine" }}
+{{ $work := promptBool "Is this a work machine" }}
+
+[data]
+  personal = {{ $personal }}
+  work = {{ $work }}
