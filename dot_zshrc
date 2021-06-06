@@ -1,5 +1,5 @@
 # Setup some extra paths (node, python, custom scripts)
-export PATH="/opt/homebrew/bin:/opt/homebrew/opt/node@14/bin:$HOME/Library/Python/3.9/bin:$HOME/.bin:$PATH"
+export PATH="/opt/homebrew/bin:/opt/homebrew/opt/node@14/bin:$HOME/Library/Python/3.9/bin:$HOME/.bin:/opt/homebrew/opt/mysql@5.7/bin:$PATH"
 
 # Assuming we have Code anywhere, but this should probably just be vim
 export EDITOR="code -w"
@@ -91,5 +91,14 @@ fi
 # We use rbenv everywhere, so.
 eval "$(rbenv init -)"
 
+# Load nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+
 # Initialize starship
 eval "$(starship init zsh)"
+
+# Some BS gumroad setup
+
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+export PUPPETEER_EXECUTABLE_PATH=`which chromium`

@@ -10,3 +10,4 @@ tmp/**/*
 zeus.json
 Procfile.ubuntu
 .ruby-version
+docker/docker-compose-local.yml
