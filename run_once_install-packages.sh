@@ -29,6 +29,7 @@ brew install youtube-dl
 brew install rconroy293/seventeenlands/seventeenlands
 brew install ansible
 brew install awscli
+brew install gnupg
 
 # Install casks
 brew install firefox
