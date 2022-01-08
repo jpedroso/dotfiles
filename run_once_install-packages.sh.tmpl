@@ -1,86 +1,53 @@
-{{ if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
 
 # Install homebrew if it doesn't exist yet
 [ -z "$(which brew)" ] &&
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Homebrew packages
-{{ $brews := list
-    "zsh"
-    "antibody"
-    "starship"
-    "bat"
-    "tmux"
-    "fzf"
-    "exa"
-    "ripgrep"
-    "wget"
-    "htop"
-    "neovim"
-    "git"
-    "git-flow"
-    "git-delta"
-    "gh"
-    "rbenv"
-    "ruby-build"
-    "nvm"
-    "elixir"
-  -}}
-
-# Homebrew casks
-{{ $casks := list
-    "iterm2"
-    "slack"
-    "visual-studio-code"
-    "1password"
-    "1password-cli"
-    "discord-ptb"
-  -}}
-
-# Homebrew fonts
-{{ $fonts := list
-    "homebrew/cask-fonts/font-iosevka-nerd-font"
-    "homebrew/cask-fonts/font-blex-mono-nerd-font"
-    "homebrew/cask-fonts/font-hack-nerd-font"
-  -}}
-
-# Packages only installed on personal computers (see .chezmoi.toml.tmpl)
-{{ if .personal -}}
-  {{ $brews = concat $brews  (list
-    "youtube-dl"
-    "rconroy293/seventeenlands/seventeenlands"
-  )}}
-
-  {{ $casks = concat $casks  (list
-    "spotify"
-    "telegram"
-    "maccy"
-    "transmit"
-  )}}
-{{ end -}}
-
-# Packages only installed on work computers (see .chezmoi.toml.tmpl)
-{{ if .work -}}
-  {{ $brews = concat $brews  (list
-    "ansible"
-    "awscli"
-  )}}
-{{ end -}}
-
 # Install packages
-{{ range ($brews | sortAlpha | uniq) -}}
-  brew install "{{ . }}"
-{{ end -}}
+brew install zsh
+brew install antibody
+brew install starship
+brew install bat
+brew install tmux
+brew install fzf
+brew install exa
+brew install ripgrep
+brew install wget
+brew install htop
+brew install neovim
+brew install git
+brew install git-flow
+brew install git-delta
+brew install gh
+brew install rbenv
+brew install ruby-build
+brew install nvm
+brew install elixir
+brew install youtube-dl
+brew install rconroy293/seventeenlands/seventeenlands
+brew install ansible
+brew install awscli
 
 # Install casks
-{{ range ($casks | sortAlpha | uniq) -}}
-  brew install --cask "{{ . }}"
-{{ end -}}
+brew install iterm2
+brew install slack
+brew install visual-studio-code
+brew install 1password
+brew install 1password-cli
+brew install alfred
+brew install spotify
+brew install telegram
+brew install maccy
+brew install transmit
+
+# Specific cask versions
+brew tap brew tap homebrew/cask-versions
+brew install discord-ptb
 
 # Install fonts
 brew tap homebrew/cask-fonts
-{{ range ($fonts | sortAlpha | uniq) -}}
-  brew install "{{ . }}"
-{{ end -}}
-{{ end -}}
+brew install font-iosevka-nerd-font
+brew install font-blex-mono-nerd-font
+brew install font-hack-nerd-font
+
