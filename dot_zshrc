@@ -1,5 +1,5 @@
 # Setup some extra paths (node, python, custom scripts)
-export PATH="/opt/homebrew/bin:/opt/homebrew/opt/node@14/bin:$HOME/Library/Python/3.9/bin:$HOME/.bin:/opt/homebrew/opt/mysql@5.7/bin:$PATH"
+export PATH="/opt/homebrew/bin:/opt/homebrew/opt/node@14/bin:$HOME/Library/Python/3.9/bin:$HOME/.bin:$PATH"
 
 # Assuming we have Code anywhere, but this should probably just be vim
 export EDITOR="code -w"
@@ -8,11 +8,11 @@ export EDITOR="code -w"
 export TERM=xterm-256color
 
 # A few helpful aliases
+alias g="git"
 alias ls="exa -l"
 alias l="exa -l"
 alias ll="exa -la"
 alias c="code"
-alias gs="git status"
 alias cm="chezmoi"
 
 # History configuration
@@ -82,23 +82,16 @@ bindkey '^[[B' history-substring-search-down
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# macOS specific settings
-if [[ `uname` == "Darwin" ]]; then
-  # Homebrew, cargo path
-  export PATH="/usr/local/bin:$HOME/.cargo/bin:$PATH"
-fi
-
-# We use rbenv everywhere, so.
+# Init rbenv
 eval "$(rbenv init -)"
 
-# Load nvm
+# Init nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
 
 # Initialize starship
 eval "$(starship init zsh)"
 
-# Some BS gumroad setup
-
+# Some Gumroad setup
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`

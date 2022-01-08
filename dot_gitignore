@@ -8,6 +8,4 @@ tags
 tmp/**/*
 !tmp/cache/.keep
 zeus.json
-Procfile.ubuntu
 .ruby-version
-docker/docker-compose-local.yml
