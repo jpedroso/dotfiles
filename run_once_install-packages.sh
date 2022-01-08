@@ -20,9 +20,10 @@ brew install git
 brew install git-flow
 brew install git-delta
 brew install gh
-brew install rbenv
-brew install ruby-build
-brew install nvm
+# brew install rbenv
+# brew install ruby-build
+# brew install nvm
+brew install asdf
 brew install elixir
 brew install youtube-dl
 brew install rconroy293/seventeenlands/seventeenlands

@@ -95,3 +95,6 @@ eval "$(starship init zsh)"
 # Some Gumroad setup
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+
+# Setup asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
