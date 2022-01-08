@@ -30,6 +30,7 @@ brew install ansible
 brew install awscli
 
 # Install casks
+brew install firefox
 brew install iterm2
 brew install slack
 brew install visual-studio-code
