@@ -8,6 +8,7 @@
 # Homebrew packages
 {{ $brews := list
     "zsh"
+    "antibody"
     "starship"
     "bat"
     "tmux"
@@ -78,7 +79,8 @@
 {{ end -}}
 
 # Install fonts
+brew tap homebrew/cask-fonts
 {{ range ($fonts | sortAlpha | uniq) -}}
-  brew install --cask "{{ . }}"
+  brew install "{{ . }}"
 {{ end -}}
 {{ end -}}
