@@ -20,7 +20,5 @@ which is honestly fantastic. I recommend you go through the documentation to fig
 out exactly how it works, but the very quick way to install these is as follows:
 
 ```
-sh -c "$(curl -fsLS git.io/chezmoi)"
-chezmoi init https://github.com/username/dotfiles.git
-chezmoi apply
+BINDIR=~/.bin sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply fredoliveira
 ```
