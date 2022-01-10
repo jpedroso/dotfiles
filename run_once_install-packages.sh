@@ -31,6 +31,10 @@ brew install ansible
 brew install awscli
 brew install gnupg
 
+# Work-related packages
+brew install postgresql
+brew install redis
+
 # Install casks
 brew install firefox
 brew install iterm2
