@@ -51,6 +51,7 @@ brew install omnifocus
 brew install resilio-sync
 brew install cron
 brew install obsidian
+brew install chromium
 
 # TODO: Change to regular discord once ARM build is official
 brew install homebrew/cask-versions/discord-ptb
