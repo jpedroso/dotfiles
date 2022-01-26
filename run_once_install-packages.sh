@@ -61,6 +61,10 @@ brew tap homebrew/cask-fonts
 brew install font-iosevka-nerd-font
 brew install font-blex-mono-nerd-font
 brew install font-hack-nerd-font
+brew install font-ia-writer-duo
+brew install font-ia-writer-duospace
+brew install font-ia-writer-mono
+brew install font-ia-writer-quattro
 
 # Install apps from the app store
 brew install mas
