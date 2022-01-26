@@ -65,4 +65,4 @@ brew install font-hack-nerd-font
 # Install apps from the app store
 brew install mas
 mas install 1435957248  # Drafts
-mas install 497799835   # Xcode
+#mas install 497799835   # Xcode
