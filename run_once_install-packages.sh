@@ -23,9 +23,6 @@ brew install git
 brew install git-flow
 brew install git-delta
 brew install gh
-# brew install rbenv
-# brew install ruby-build
-# brew install nvm
 brew install asdf
 brew install elixir
 brew install youtube-dl
@@ -72,4 +69,5 @@ brew install font-ia-writer-quattro
 # Install apps from the app store
 brew install mas
 mas install 1435957248  # Drafts
-#mas install 497799835   # Xcode
+mas install 497799835   # Xcode
+mas install 1451685025  # Wireguard
