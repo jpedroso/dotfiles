@@ -30,6 +30,7 @@ brew install rconroy293/seventeenlands/seventeenlands
 brew install ansible
 brew install awscli
 brew install gnupg
+brew install imagemagick
 
 # Work-related packages
 brew install postgresql
