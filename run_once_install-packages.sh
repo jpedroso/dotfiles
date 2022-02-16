@@ -55,7 +55,11 @@ brew install omnifocus
 brew install resilio-sync
 brew install cron
 brew install obsidian
+
 brew install chromium
+
+# Remove quarantine attribute from chromium so that it can run straight off the cask install
+xattr -cr /Applications/Chromium.app
 
 # TODO: Change to regular discord once ARM build is official
 brew install homebrew/cask-versions/discord-ptb
