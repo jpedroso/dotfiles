@@ -44,7 +44,7 @@ brew install firefox
 brew install iterm2
 brew install slack
 brew install visual-studio-code
-brew install 1password
+brew install 1password-beta
 brew install 1password-cli
 brew install alfred
 brew install spotify
@@ -55,7 +55,6 @@ brew install omnifocus
 brew install resilio-sync
 brew install cron
 brew install obsidian
-
 brew install chromium
 
 # Remove quarantine attribute from chromium so that it can run straight off the cask install
