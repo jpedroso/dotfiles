@@ -31,10 +31,13 @@ brew install ansible
 brew install awscli
 brew install gnupg
 brew install imagemagick
+brew install overmind
 
 # Work-related packages
 brew install postgresql
 brew install redis
+brew tap elastic/tap
+brew install elastic/tap/elasticsearch-full
 
 # Install casks
 brew install firefox
