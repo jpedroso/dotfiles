@@ -33,6 +33,9 @@ brew install gnupg
 brew install imagemagick
 brew install overmind
 
+# FIXME: until homebrew cask figures out its dependency for font installation
+brew install svn
+
 # Work-related packages
 brew install postgresql
 brew install redis
@@ -57,6 +60,7 @@ brew install cron
 brew install obsidian
 brew install chromium
 brew install vlc
+brew install calibre
 
 # Remove quarantine attribute from chromium so that it can run straight off the cask install
 xattr -cr /Applications/Chromium.app
