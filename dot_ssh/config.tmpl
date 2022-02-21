@@ -14,6 +14,5 @@ Host *
   # See https://www.upguard.com/blog/fixing-the-new-openssh-roaming-bug
   UseRoaming no
 
-Host pi
-  HostName 192.168.1.170
-  User pi
+  # Use the 1password agent
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
