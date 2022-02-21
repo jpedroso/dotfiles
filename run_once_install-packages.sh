@@ -73,6 +73,8 @@ brew install font-ia-writer-duo
 brew install font-ia-writer-duospace
 brew install font-ia-writer-mono
 brew install font-ia-writer-quattro
+brew install font-roboto
+brew install font-source-sans-pro
 
 # Install apps from the app store
 brew install mas
