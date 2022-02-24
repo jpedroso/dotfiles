@@ -52,7 +52,6 @@ brew install 1password-cli
 brew install alfred
 brew install spotify
 brew install telegram
-brew install maccy
 brew install transmit
 brew install omnifocus
 brew install resilio-sync
