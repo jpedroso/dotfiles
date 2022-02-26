@@ -48,7 +48,7 @@ brew install iterm2
 brew install slack
 brew install visual-studio-code
 brew install 1password-beta
-brew install 1password-cli
+brew install 1password-cli-beta
 brew install alfred
 brew install spotify
 brew install telegram
