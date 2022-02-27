@@ -84,3 +84,4 @@ brew install mas
 mas install 1435957248  # Drafts
 mas install 497799835   # Xcode
 mas install 1451685025  # Wireguard
+mas install 1475387142  # Tailscale
