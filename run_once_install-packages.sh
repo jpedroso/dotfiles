@@ -60,6 +60,8 @@ brew install obsidian
 brew install chromium
 brew install vlc
 brew install calibre
+brew tap federico-terzi/espanso
+brew install espanso
 
 # Remove quarantine attribute from chromium so that it can run straight off the cask install
 xattr -cr /Applications/Chromium.app
