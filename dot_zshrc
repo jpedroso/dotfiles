@@ -15,6 +15,12 @@ alias ll="exa -la"
 alias c="code"
 alias cm="chezmoi"
 
+# A few services
+# More of these here: https://github.com/chubin/awesome-console-services
+alias weather="curl wttr.in/Coimbra"
+alias covid="curl snf-878293.vm.okeanos.grnet.gr"
+alias ip="dig @1.1.1.1 whoami.cloudflare ch txt +short"
+
 # History configuration
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
 
@@ -71,7 +77,6 @@ ZSH_DOTENV_ALLOWED_LIST=~/.config/dotenv-allowed
 ZSH_DOTENV_DISALLOWED_LIST=~/.config/dotenv-disallowed
 
 # Antibody setup
-# Remember to run this whenever you update your plugins:
 source <(antibody init)
 antibody bundle < ~/.zsh_plugins.txt
 
@@ -84,10 +89,6 @@ bindkey '^[[B' history-substring-search-down
 
 # Initialize starship
 eval "$(starship init zsh)"
-
-# Some Gumroad setup
-export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 
 # Setup asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
