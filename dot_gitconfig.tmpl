@@ -25,8 +25,8 @@
 [branch]
   autosetupmerge = true
 [user]
-  name = Fred Oliveira
-  email = fred@helloform.com
+  name = {{ .name | quote }}
+  email = {{ .email | quote }}
 [push]
   default = simple
 [filter "media"]

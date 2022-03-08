@@ -1,6 +1,8 @@
-{{ $personal := promptBool "Is this a personal machine" }}
-{{ $work := promptBool "Is this a work machine" }}
+{{ $name := promptString "name" -}}
+{{ $email := promptString "email" -}}
+{{ $work := promptBool "install work packages" }}
 
 [data]
-  personal = {{ $personal }}
   work = {{ $work }}
+  email = {{ $email | quote }}
+  name = {{ $name | quote }}
