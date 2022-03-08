@@ -1,3 +1,4 @@
+{{- if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
 
 # Install homebrew if it doesn't exist yet
@@ -87,3 +88,5 @@ mas install 1435957248  # Drafts
 mas install 497799835   # Xcode
 mas install 1451685025  # Wireguard
 mas install 1475387142  # Tailscale
+
+{{ end -}}

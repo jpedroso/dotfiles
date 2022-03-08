@@ -1,3 +1,4 @@
+{{- if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
 
 # Expand save panel by default
@@ -57,3 +58,5 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
+
+{{ end -}}
