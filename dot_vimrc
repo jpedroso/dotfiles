@@ -27,8 +27,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/gv.vim'
 
 " Fuzzy finder
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug '/usr/local/opt/fzf'
 
 " Better search via Ack
 Plug 'mileszs/ack.vim'
@@ -38,19 +37,15 @@ Plug 'Shougo/neocomplete'
 
 " Language-specific support
 Plug 'tpope/vim-rails'
-Plug 'kchmck/vim-coffee-script'
 Plug 'slim-template/vim-slim'
 Plug 'elixir-editors/vim-elixir'
-
-" Vimwiki
-Plug 'vimwiki/vimwiki'
 
 " Powerline
 Plug 'itchyny/lightline.vim'
 set noshowmode
 
 " Theme
-let g:sonokai_style = 'shusia'
+let g:sonokai_style = 'maia'
 Plug 'sainnhe/sonokai'
 
 " Which-key
