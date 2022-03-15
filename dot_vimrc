@@ -45,7 +45,7 @@ Plug 'itchyny/lightline.vim'
 set noshowmode
 
 " Theme
-let g:sonokai_style = 'maia'
+let g:sonokai_style = 'shusia'
 Plug 'sainnhe/sonokai'
 
 " Which-key
