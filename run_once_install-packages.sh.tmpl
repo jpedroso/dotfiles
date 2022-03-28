@@ -34,11 +34,13 @@ brew install svn # FIXME: until homebrew cask figures out its dependency for fon
 brew install restic
 
 # Work-related packages
+{{ if .work -}}
 brew install postgresql
 brew install redis
 brew tap elastic/tap
 brew install elastic/tap/elasticsearch-full
 brew install vips
+{{ end -}}
 
 # Install casks
 brew install firefox
@@ -74,11 +76,13 @@ brew install font-ia-writer-quattro
 brew install font-roboto
 brew install font-source-sans-pro
 
-# Install apps from the app store
+# Install apps from the app store, if intended
+{{ if .mas -}}
 brew install mas
 mas install 1435957248  # Drafts
 mas install 497799835   # Xcode
 mas install 1451685025  # Wireguard
 mas install 1475387142  # Tailscale
+{{ end -}}
 
 {{ end -}}
