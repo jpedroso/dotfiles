@@ -12,11 +12,10 @@ fi
 brew install zsh
 brew install antibody
 brew install starship
-brew install bat
 brew install tmux
 brew install fzf
-brew install exa
 brew install ripgrep
+brew install exa
 brew install wget
 brew install htop
 brew install neovim
@@ -26,19 +25,19 @@ brew install git-delta
 brew install asdf
 brew install elixir
 brew install youtube-dl
-brew install awscli
-brew install imagemagick
 brew install overmind
 brew install syncthing
 brew install svn # FIXME: until homebrew cask figures out its dependency for font installation
-brew install restic
+brew install utm
 
 # Work-related packages
 {{ if .work -}}
+brew tap elastic/tap
+brew install awscli
 brew install postgresql
 brew install redis
-brew tap elastic/tap
 brew install elastic/tap/elasticsearch-full
+brew install imagemagick
 brew install vips
 {{ end -}}
 
@@ -83,6 +82,7 @@ mas install 1435957248  # Drafts
 mas install 497799835   # Xcode
 mas install 1451685025  # Wireguard
 mas install 1475387142  # Tailscale
+mas install 937984704   # Amphetamine
 {{ end -}}
 
 {{ end -}}
