@@ -31,27 +31,6 @@ brew install svn # FIXME: until homebrew cask figures out its dependency for fon
 brew install fd
 brew install gpg
 
-# Emacs
-brew tap railwaycat/emacsmacport
-brew install emacs-mac --with-modules --with-emacs-big-sur-icon
-osascript -e 'tell application "Finder" to make alias file to POSIX file "/opt/homebrew/opt/emacs-mac/Emacs.app" at POSIX file "/Applications"'
-
-# Asdf setup
-asdf plugin add nodejs || true
-asdf plugin add yarn || true
-asdf plugin add ruby || true
-
-# Work-related packages
-{{ if .work -}}
-brew tap elastic/tap
-brew install awscli
-brew install postgresql
-brew install redis
-brew install elastic/tap/elasticsearch-full
-brew install imagemagick
-brew install vips
-{{ end -}}
-
 # Install casks
 brew install firefox
 brew install iterm2
@@ -70,7 +49,6 @@ brew install chromium
 brew install vlc
 brew install devonthink
 brew install discord
-# brew install utm
 brew install rectangle-pro
 
 # fzf shell completion/keybindings setup
@@ -92,16 +70,45 @@ brew install font-roboto
 brew install font-source-sans-pro
 brew install font-input
 
-# Install apps from the app store, if intended
+# Asdf setup
+asdf plugin add nodejs || true
+asdf plugin add yarn || true
+asdf plugin add ruby || true
+
+# Work-related packages
+{{ if .work -}}
+brew tap elastic/tap
+brew install awscli
+brew install postgresql
+brew install redis
+brew install elastic/tap/elasticsearch-full
+brew install imagemagick
+brew install vips
+brew install utm
+{{ end -}}
+
+# Emacs packages
+{{ if .emacs -}}
+# brew tap railwaycat/emacsmacport
+# brew install emacs-mac --with-modules --with-emacs-big-sur-icon
+# osascript -e 'tell application "Finder" to make alias file to POSIX file "/opt/homebrew/opt/emacs-mac/Emacs.app" at POSIX file "/Applications"'
+{{ end -}}
+
+# Mac App Store apps
 {{ if .mas -}}
 brew install mas
 mas install 1435957248  # Drafts
-# mas install 497799835   # Xcode
-# mas install 1451685025  # Wireguard
 mas install 1475387142  # Tailscale
 mas install 937984704   # Amphetamine
 mas install 1289197285  # Mindnode
+# mas install 497799835   # Xcode
+# mas install 1451685025  # Wireguard
 # mas install 409183694   # Keynote
+{{ end -}}
+
+# Music packages
+{{ if .music -}}
+brew install ableton-live-suite
 {{ end -}}
 
 {{ end -}}
