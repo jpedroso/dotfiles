@@ -1,0 +1,8 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """$directory$character"""
+
+right_format = """$git_branch$git_commit$git_state$git_metrics$git_status"""
+
+[git_branch]
+symbol = "🌱 "
