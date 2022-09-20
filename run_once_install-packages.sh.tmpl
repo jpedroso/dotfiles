@@ -51,12 +51,6 @@ brew install devonthink
 brew install discord
 brew install rectangle-pro
 
-# fzf shell completion/keybindings setup
-/opt/homebrew/opt/fzf/install
-
-# Remove quarantine attribute from chromium so that it can run straight off the cask install
-xattr -cr /Applications/Chromium.app
-
 # Install fonts
 brew tap homebrew/cask-fonts
 brew install font-iosevka-nerd-font
@@ -72,8 +66,8 @@ brew install font-input
 
 # Asdf setup
 asdf plugin add nodejs || true
-asdf plugin add yarn || true
-asdf plugin add ruby || true
+asdf plugin add yarn   || true
+asdf plugin add ruby   || true
 
 # Work-related packages
 {{ if .work -}}
@@ -109,5 +103,13 @@ mas install 1289197285  # Mindnode
 {{ if .music -}}
 brew install ableton-live-suite
 {{ end -}}
+
+# Miscellaneous stuff
+
+# fzf shell completion/keybindings setup
+/opt/homebrew/opt/fzf/install
+
+# Remove quarantine attribute from chromium so that it can run straight off the cask install
+xattr -cr /Applications/Chromium.app
 
 {{ end -}}
