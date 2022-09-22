@@ -71,11 +71,10 @@ asdf plugin add ruby   || true
 
 # Work-related packages
 {{ if .work -}}
-brew tap elastic/tap
 brew install awscli
 brew install postgresql
 brew install redis
-brew install elastic/tap/elasticsearch-full
+brew install opensearch
 brew install imagemagick
 brew install vips
 {{ end -}}
