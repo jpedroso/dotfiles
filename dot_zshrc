@@ -70,26 +70,23 @@ else
   compinit -C -i
 fi
 
-# Other
-# setopt prompt_subst
+# History substring search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # Dotenv
 ZSH_DOTENV_ALLOWED_LIST=~/.config/dotenv-allowed
 ZSH_DOTENV_DISALLOWED_LIST=~/.config/dotenv-disallowed
 
-# Antibody setup
+# Initialize Antibody
 source <(antibody init)
 antibody bundle < ~/.zsh_plugins.txt
 
-# History substring search
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-
-# FZF
+# Initialize FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Initialize starship
 eval "$(starship init zsh)"
 
-# Setup asdf
+# Initialize asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh

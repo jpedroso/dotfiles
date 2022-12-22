@@ -3,7 +3,6 @@
 {{ $work := promptBool "install work packages" }}
 {{ $mas := promptBool "install App Store apps" }}
 {{ $music := promptBool "install music apps" }}
-{{ $emacs := promptBool "install emacs" }}
 
 [data]
   work = {{ $work }}
@@ -11,4 +10,3 @@
   name = {{ $name | quote }}
   mas = {{ $mas }}
   music = {{ $music }}
-  emacs = {{ $emacs }}

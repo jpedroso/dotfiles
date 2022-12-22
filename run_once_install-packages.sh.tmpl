@@ -22,7 +22,6 @@ brew install neovim
 brew install git
 brew install git-flow
 brew install asdf
-brew install elixir
 brew install yt-dlp
 brew install overmind
 brew install svn # FIXME: until homebrew cask figures out its dependency for font installation
@@ -80,13 +79,6 @@ brew install redis
 brew install opensearch
 brew install imagemagick
 brew install vips
-{{ end -}}
-
-# Emacs packages
-{{ if .emacs -}}
-# brew tap railwaycat/emacsmacport
-# brew install emacs-mac --with-modules --with-emacs-big-sur-icon
-# osascript -e 'tell application "Finder" to make alias file to POSIX file "/opt/homebrew/opt/emacs-mac/Emacs.app" at POSIX file "/Applications"'
 {{ end -}}
 
 # Mac App Store apps
