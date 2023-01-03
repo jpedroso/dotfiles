@@ -1,0 +1,23 @@
+{{- if eq .chezmoi.os "linux" -}}
+#!/bin/sh
+
+sudo dnf install zsh
+sudo dnf install fzf
+sudo dnf install exa
+sudo dnf install yt-dlp
+sudo dnf install ripgrep
+
+# Asdf setup
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+
+# Temporarily init asdf
+. $HOME/.asdf/asdf.sh
+
+# Install asdf plugins
+asdf plugin add nodejs || true
+asdf plugin add yarn   || true
+asdf plugin add ruby   || true
+
+# Antidote
+git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+{{ end -}}

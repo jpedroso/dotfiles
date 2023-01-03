@@ -1,6 +1,11 @@
 # Setup some extra paths (node, python, custom scripts)
+{{ if eq .chezmoi.os "darwin" }}
 export PATH="/opt/homebrew/bin:$HOME/Library/Python/3.9/bin:$HOME/.local/bin:$HOME/.bin:$HOME/.cargo/bin:$HOME/.emacs.d/bin:$PATH"
 export ES_JAVA_HOME="/usr"
+{{ end }}
+{{ if eq .chezmoi.os "linux" }}
+export PATH="$HOME/.bin:$PATH"
+{{ end }}
 
 # Assuming we have Code anywhere, but this should probably just be vim
 export EDITOR="code -w"
@@ -79,8 +84,8 @@ ZSH_DOTENV_ALLOWED_LIST=~/.config/dotenv-allowed
 ZSH_DOTENV_DISALLOWED_LIST=~/.config/dotenv-disallowed
 
 # Initialize Antibody
-source <(antibody init)
-antibody bundle < ~/.zsh_plugins.txt
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+antidote load
 
 # Initialize FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -89,4 +94,10 @@ antibody bundle < ~/.zsh_plugins.txt
 eval "$(starship init zsh)"
 
 # Initialize asdf
+{{ if eq .chezmoi.os "darwin" }}
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
+{{ end -}}
+
+{{ if eq .chezmoi.os "linux" }}
+. $HOME/.asdf/asdf.sh
+{{ end }}
