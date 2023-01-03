@@ -1,11 +1,8 @@
 {{- if eq .chezmoi.os "linux" -}}
 #!/bin/sh
 
-sudo dnf install zsh
-sudo dnf install fzf
-sudo dnf install exa
-sudo dnf install yt-dlp
-sudo dnf install ripgrep
+# Install packages
+sudo dnf install zsh exa yt-dlp ripgrep
 
 # Asdf setup
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
@@ -20,4 +17,8 @@ asdf plugin add ruby   || true
 
 # Antidote
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+
+# Fzf setup
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 {{ end -}}
