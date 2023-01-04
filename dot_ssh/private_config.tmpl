@@ -7,7 +7,7 @@ Host *
   EscapeChar `
   ControlMaster auto
   ControlPersist 72000
-  ControlPath ~/.ssh/s/%C
+  ControlPath ~/.ssh/control-%h-%p-%r
 
   # Allow storing passphrases in the macOS keychain
   AddKeysToAgent yes
