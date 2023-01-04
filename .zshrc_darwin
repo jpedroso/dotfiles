@@ -1,0 +1,92 @@
+# Setup some extra paths (node, python, custom scripts)
+export PATH="/opt/homebrew/bin:$HOME/Library/Python/3.9/bin:$HOME/.local/bin:$HOME/.bin:$HOME/.cargo/bin:$HOME/.emacs.d/bin:$PATH"
+export ES_JAVA_HOME="/usr"
+
+# Assuming we have Code anywhere, but this should probably just be vim
+export EDITOR="code -w"
+
+# Have a consistent TERM variable
+export TERM=xterm-256color
+
+# A few helpful aliases
+alias g="git"
+alias ls="exa -l"
+alias l="exa -l"
+alias ll="exa -la"
+alias c="code"
+alias cm="chezmoi"
+
+# A few services
+# More of these here: https://github.com/chubin/awesome-console-services
+alias weather="curl wttr.in/Coimbra"
+alias covid="curl snf-878293.vm.okeanos.grnet.gr"
+alias ip="dig @1.1.1.1 whoami.cloudflare ch txt +short"
+
+# History configuration
+[ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
+
+HISTSIZE=50000
+SAVEHIST=10000
+
+setopt extended_history # Saves timestamps and durations in history logs
+setopt hist_expire_dups_first # Trim duplicate commands when trimming the history file
+setopt hist_ignore_dups # Ignore the same command ran multiple times in a row
+setopt hist_ignore_space # Ignore commands that start with a space
+setopt inc_append_history # Add to history as soon as commands run
+setopt share_history # Load history whenever used so that multiple terminals see it
+
+# Changing directories
+setopt auto_cd
+setopt auto_pushd
+unsetopt pushd_ignore_dups
+setopt pushdminus
+
+# Other options
+unsetopt extended_glob
+unsetopt nomatch
+setopt auto_param_slash
+setopt mark_dirs
+setopt list_types
+
+# Completion
+setopt auto_menu # Show a menu with completions
+setopt always_to_end # Always move cursor to end of completion
+setopt complete_in_word # Complete in middle of a word
+unsetopt flow_control # Disables the use of ⌃S to stop terminal output and the use of ⌃Q to resume it
+unsetopt menu_complete # If set, this option prevents the completion menu from showing even if AUTO_MENU is set
+zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
+
+# completion
+autoload -Uz compinit
+typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
+if [ $(date +'%j') != $updated_at ]; then
+  compinit -i
+else
+  compinit -C -i
+fi
+
+# History substring search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# Dotenv
+ZSH_DOTENV_ALLOWED_LIST=~/.config/dotenv-allowed
+ZSH_DOTENV_DISALLOWED_LIST=~/.config/dotenv-disallowed
+
+# Initialize Antidote
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+antidote load
+
+# Initialize FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Initialize starship
+eval "$(starship init zsh)"
+
+# Initialize asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh

@@ -5,7 +5,7 @@
 sudo dnf install zsh exa yt-dlp ripgrep curl git
 
 # Asdf setup
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2 || true
 
 # Temporarily init asdf
 . $HOME/.asdf/asdf.sh
@@ -14,11 +14,4 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
 asdf plugin add nodejs || true
 asdf plugin add yarn   || true
 asdf plugin add ruby   || true
-
-# Antidote
-git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
-
-# Fzf setup
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
 {{ end -}}
