@@ -14,7 +14,7 @@ zstyle ':z4h:' auto-update-days '28'
 zstyle ':z4h:bindkey' keyboard  'pc'
 
 # Don't start tmux.
-zstyle ':z4h:' start-tmux       no
+# zstyle ':z4h:' start-tmux       no
 
 # Mark up shell's output with semantic information.
 zstyle ':z4h:' term-shell-integration 'yes'
@@ -48,6 +48,7 @@ zstyle ':z4h:ssh:*'                   enable 'no'
 # up-to-date. Cloned files can be used after `z4h init`. This is just an
 # example. If you don't plan to use Oh My Zsh, delete this line.
 # z4h install ohmyzsh/ohmyzsh || return
+z4h install agkozak/zsh-z || return
 
 # Install or update core components (fzf, zsh-autosuggestions, etc.) and
 # initialize Zsh. After this point console I/O is unavailable until Zsh
@@ -69,6 +70,7 @@ z4h source ~/.env.zsh
 # This is just an example that you should delete. It does nothing useful.
 # z4h source ohmyzsh/ohmyzsh/lib/diagnostics.zsh  # source an individual file
 # z4h load   ohmyzsh/ohmyzsh/plugins/emoji-clock  # load a plugin
+z4h load agkozak/zsh-z
 
 # Define key bindings.
 z4h bindkey z4h-backward-kill-word  Ctrl+Backspace     Ctrl+H
