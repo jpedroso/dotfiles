@@ -15,6 +15,7 @@ alias l="exa -l"
 alias ll="exa -la"
 alias c="code"
 alias cm="chezmoi"
+alias buu="brew update && brew upgrade"
 
 # A few services
 # More of these here: https://github.com/chubin/awesome-console-services
