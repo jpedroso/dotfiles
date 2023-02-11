@@ -1,14 +1,1 @@
 README.md
-
-{{ if ne .chezmoi.os "darwin" }}
-Library
-Documents
-.zshrc_darwin
-.zshenv_darwin
-{{ end }}
-
-{{ if ne .chezmoi.os "linux" }}
-.zshrc_linux
-.zshenv_linux
-.p10k.zsh
-{{ end }}
