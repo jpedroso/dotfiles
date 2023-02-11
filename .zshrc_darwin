@@ -18,8 +18,6 @@ alias buu="brew update && brew upgrade"
 
 # A few services
 # More of these here: https://github.com/chubin/awesome-console-services
-alias weather="curl wttr.in/Coimbra"
-alias covid="curl snf-878293.vm.okeanos.grnet.gr"
 alias ip="dig @1.1.1.1 whoami.cloudflare ch txt +short"
 
 # History configuration
