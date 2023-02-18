@@ -1,5 +1,6 @@
 {{ $name := promptString "name" -}}
 {{ $email := promptString "email" -}}
+{{ $computerName := promptString "computer name" -}}
 {{ $work := promptBool "install work packages" }}
 {{ $mas := promptBool "install App Store apps" }}
 
@@ -7,4 +8,5 @@
   work = {{ $work }}
   email = {{ $email | quote }}
   name = {{ $name | quote }}
+  computerName = {{ $computerName | quote }}
   mas = {{ $mas }}
