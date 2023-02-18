@@ -53,11 +53,7 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 # Show the ~/Library folder
 # chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
 
-# Disable Dashboard
-defaults write com.apple.dashboard mcx-disabled -bool true
 
-# Don’t show Dashboard as a Space
-defaults write com.apple.dock dashboard-in-overlay -bool true
 
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
