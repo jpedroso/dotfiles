@@ -1,6 +1,9 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
 
+sudo scutil --set ComputerName {{ .computerName | quote }}
+sudo scutil --set LocalHostName {{ .computerName | quote }}
+
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
