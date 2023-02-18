@@ -84,4 +84,12 @@ defaults write com.apple.dock wvous-tr-modifier -int 0
 # Bottom right screen corner → Desktop
 defaults write com.apple.dock wvous-br-corner -int 4
 defaults write com.apple.dock wvous-br-modifier -int 0
+
+###############################################################################
+# Xcode
+###############################################################################
+
+# Trim trailing whitespace including whitespace-only lines
+defaults write com.apple.dt.Xcode DVTTextEditorTrimTrailingWhitespace -bool true
+defaults write com.apple.dt.Xcode DVTTextEditorTrimWhitespaceOnlyLines -bool true
 {{ end -}}
