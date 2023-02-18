@@ -57,16 +57,6 @@ git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antid
 # asdf plugin add yarn   || true
 # asdf plugin add ruby   || true
 
-# Work-related packages
-{{ if .work -}}
-brew install awscli
-brew install postgresql
-brew install redis
-brew install opensearch
-brew install imagemagick
-brew install vips
-{{ end -}}
-
 # Mac App Store apps
 {{ if .mas -}}
 brew install mas
