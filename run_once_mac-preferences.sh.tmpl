@@ -201,4 +201,12 @@ defaults write com.apple.dt.Xcode DVTTextAlignConsecutiveSlashSlashComments -boo
 # Hide Minimap
 defaults write com.apple.dt.Xcode DVTTextShowMinimap -bool false
 
+###############################################################################
+# Music
+###############################################################################
+# Download Dolby Atmos
+defaults write com.apple.Music downloadDoblyAtmos -bool true
+# Disable notifications when song changes
+defaults write com.apple.Music userWantsPlaybackNotifications -bool false
+
 {{ end -}}
