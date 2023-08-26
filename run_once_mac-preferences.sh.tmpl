@@ -54,6 +54,31 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 defaults write com.apple.finder NewWindowTargetPath \
 {{ joinPath .chezmoi.homeDir "Developer" | quote }}
 
+# Change Finder's Column View text size to 12 and hide preview column
+# - StandardViewOptions/ColumnViewOptions/FontSize 12
+# - StandardViewOptions/ColumnViewOptions/ColumnShowIcons false
+defaults write com.apple.finder StandardViewOptions -dict-add ColumnViewOptions \
+'<dict>
+	<key>ArrangeBy</key>
+	<string>dnam</string>
+	<key>ColumnShowFolderArrow</key>
+	<true/>
+	<key>ShowPreview</key>
+	<true/>
+	<key>FontSize</key>
+	<integer>12</integer>
+	<key>SharedArrangeBy</key>
+	<string>kipl</string>
+	<key>ShowIconThumbnails</key>
+	<true/>
+	<key>ColumnShowIcons</key>
+	<false/>
+	<key>PreviewDisclosureState</key>
+	<true/>
+	<key>ColumnWidth</key>
+	<integer>245</integer>
+</dict>'
+
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
