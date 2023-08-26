@@ -72,10 +72,6 @@ fi
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-# Dotenv
-ZSH_DOTENV_ALLOWED_LIST=~/.config/dotenv-allowed
-ZSH_DOTENV_DISALLOWED_LIST=~/.config/dotenv-disallowed
-
 # Initialize Antidote
 source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 antidote load
