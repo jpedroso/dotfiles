@@ -51,8 +51,8 @@
 [rebase]
 	autostash = true
 [user]
-	email = {{ .email }}
-	name = {{ .name }}
+	email = {{ .email | quote }}
+	name = {{ .name | quote }}
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDkPKXFmhMDXImnHFuqsUVL2Z0GzYBwFTDxZaxIcYAOJ
 
 # Filters: lfs, media
