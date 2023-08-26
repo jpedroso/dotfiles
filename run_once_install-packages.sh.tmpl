@@ -1,4 +1,3 @@
-{{- if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
 
 # Install homebrew if it doesn't exist yet
@@ -75,5 +74,3 @@ xcodes install --latest
 
 # fzf shell completion/keybindings setup
 /opt/homebrew/opt/fzf/install
-
-{{ end -}}

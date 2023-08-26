@@ -1,4 +1,3 @@
-{{- if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
 
 sudo scutil --set ComputerName {{ .computerName | quote }}
@@ -219,5 +218,3 @@ defaults write com.apple.Music userWantsPlaybackNotifications -bool false
 
 # Install 'CSSEdit Tribute.xccolortheme'
 # TODO
-
-{{ end -}}
