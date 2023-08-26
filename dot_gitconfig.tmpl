@@ -55,13 +55,9 @@
 	name = {{ .name | quote }}
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDkPKXFmhMDXImnHFuqsUVL2Z0GzYBwFTDxZaxIcYAOJ
 
-# Filters: lfs, media
+# LFS
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	process = git-lfs filter-process
 	required = true
 	smudge = git-lfs smudge -- %f
-[filter "media"]
-	clean = git media clean %f
-	required = true
-	smudge = git media smudge %f
