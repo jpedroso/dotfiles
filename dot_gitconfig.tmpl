@@ -1,15 +1,15 @@
 [alias]
-	st = status
-	di = diff
-	co = checkout
-	ci = commit
 	br = branch
-	sta = stash
+	ci = commit
+	co = checkout
 	cp = cherry-pick
+	di = diff
 	dlc = diff --cached HEAD^
-	review = log -p --reverse -M -C -C --patience --no-prefix
 	l = log --graph --branches --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
 	ll = log --graph --branches --remotes --tags --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
+	review = log -p --reverse -M -C -C --patience --no-prefix
+	st = status
+	sta = stash
 [branch]
 	autosetupmerge = true
 [color]
@@ -19,17 +19,17 @@
 	status = auto
 	ui = true
 [color "diff"]
-	meta = 11
-	frag = magenta bold
 	commit = yellow bold
-	old = red bold
+	frag = magenta bold
+	meta = 11
 	new = green bold
+	old = red bold
 	whitespace = red reverse
 [commit]
 	gpgsign = true
 [core]
-    editor = vim
 	commentChar = auto
+	editor = vim
 	excludesfile = ~/.gitignore
 	ignorecase = false
 [diff]
@@ -57,11 +57,11 @@
 
 # Filters: lfs, media
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
+	clean = git-lfs clean -- %f
 	process = git-lfs filter-process
 	required = true
-	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 [filter "media"]
-	required = true
 	clean = git media clean %f
+	required = true
 	smudge = git media smudge %f
