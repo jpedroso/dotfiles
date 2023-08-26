@@ -104,7 +104,30 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 # Xcode
 ###############################################################################
 
+# Automatically check spelling while typing
+defaults write com.apple.dt.Xcode AutomaticallyCheckSpellingWhileTyping -bool true
+
 # Trim trailing whitespace including whitespace-only lines
 defaults write com.apple.dt.Xcode DVTTextEditorTrimTrailingWhitespace -bool true
 defaults write com.apple.dt.Xcode DVTTextEditorTrimWhitespaceOnlyLines -bool true
+
+# Jump to Definition with Command+click on Code 
+defaults write com.apple.dt.Xcode IDECommandClickOnCodeAction -int 1
+
+# Enable Code structure when scrolling
+defaults write com.apple.dt.Xcode DVTTextShowStructureHeaders -bool true
+
+# Show Code folding ribbon
+defaults write com.apple.dt.Xcode DVTTextShowFoldingSidebar -bool true
+
+# Show Page guide at column 100
+defaults write com.apple.dt.Xcode DVTTextShowPageGuide -bool true
+defaults write com.apple.dt.Xcode DVTTextPageGuideLocation -int 100
+
+# Align consecutive // comments
+defaults write com.apple.dt.Xcode DVTTextAlignConsecutiveSlashSlashComments -bool true
+
+# Hide Minimap
+defaults write com.apple.dt.Xcode DVTTextShowMinimap -bool false
+
 {{ end -}}
