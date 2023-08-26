@@ -9,7 +9,6 @@ case, go all out and look below for instructions.
 
 - Vim setup (see `install-vim` and `configs/vimrc`)
 - Git configuration
-- Tmux configuration (With TPM)
 - Zsh shell setup (with `antidote`)
 - A couple of terminal fonts
 
