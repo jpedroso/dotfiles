@@ -8,7 +8,7 @@ case, go all out and look below for instructions.
 ### What's included
 
 - Vim setup (see `install-vim` and `configs/vimrc`)
-- Git configuration (With `git-flow`)
+- Git configuration
 - Tmux configuration (With TPM)
 - Zsh shell setup (with `antibody`)
 - A couple of terminal fonts
