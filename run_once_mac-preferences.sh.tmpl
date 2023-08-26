@@ -50,6 +50,10 @@ defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 # Disable the warning before emptying the Trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
 
+# Change Finder's default folder when opening new windows
+defaults write com.apple.finder NewWindowTargetPath \
+{{ joinPath .chezmoi.homeDir "Developer" | quote }}
+
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
