@@ -1,4 +1,2 @@
-nodejs 18.13.0
-yarn 1.22.19
-ruby 3.2.0
-chezmoi 2.29.1
+nodejs 20.3.1
+chezmoi 2.38.0
