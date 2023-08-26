@@ -61,3 +61,24 @@
 	process = git-lfs filter-process
 	required = true
 	smudge = git-lfs smudge -- %f
+
+# Diff & Merge tool config
+[diff]
+	tool = vscode
+# Kaleidoscope
+[difftool "ks"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool "ks"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+# Sublime Merge
+[mergetool "smerge"]
+	cmd = smerge mergetool \"$BASE\" \"$LOCAL\" \"$REMOTE\" -o \"$MERGED\"
+	trustExitCode = true
+[difftool "smerge"]
+	cmd = smerge \"$BASE\" \"$LOCAL\" \"$REMOTE\"
+# Visual Studio Code
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
