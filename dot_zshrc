@@ -1,5 +1,5 @@
-# Setup some extra paths (node, python, custom scripts)
-export PATH="/opt/homebrew/bin:$HOME/Library/Python/3.9/bin:$HOME/.local/bin:$HOME/.bin:$HOME/.cargo/bin:$HOME/.emacs.d/bin:$PATH"
+# Setup extra paths
+export PATH="/opt/homebrew/bin:$PATH"
 
 # Assuming we have Code anywhere, but this should probably just be vim
 export EDITOR="code -w"
