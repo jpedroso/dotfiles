@@ -1,47 +1,23 @@
-[core]
-  editor = vim
-  excludesfile = ~/.gitignore
 [alias]
-  st = status
-  di = diff
-  co = checkout
-  ci = commit
-  br = branch
-  sta = stash
-  cp = cherry-pick
-  dlc = diff --cached HEAD^
-  review = log -p --reverse -M -C -C --patience --no-prefix
-  l = log --graph --branches --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
-  ll = log --graph --branches --remotes --tags --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
-  rip = !git reset --hard HEAD && git clean -d -f
-[apply]
-  whitespace = nowarn
-[color]
-  branch = auto
-  diff = auto
-  interactive = auto
-  status = auto
-	ui = true
+	st = status
+	di = diff
+	co = checkout
+	ci = commit
+	br = branch
+	sta = stash
+	cp = cherry-pick
+	dlc = diff --cached HEAD^
+	review = log -p --reverse -M -C -C --patience --no-prefix
+	l = log --graph --branches --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
+	ll = log --graph --branches --remotes --tags --format=format:'%Cgreen%h %Creset• %<(75,trunc)%s (%cN, %cr) %Cred%d' --date-order
 [branch]
-  autosetupmerge = true
-[user]
-  name = {{ .name | quote }}
-  email = {{ .email | quote }}
-[push]
-  default = simple
-[filter "media"]
-  required = true
-  clean = git media clean %f
-  smudge = git media smudge %f
-[diff]
-  compactionHeuristic = true
-[filter "lfs"]
-  smudge = git-lfs smudge -- %f
-  process = git-lfs filter-process
-  required = true
-  clean = git-lfs clean -- %f
-[pager]
-	branch = false
+	autosetupmerge = true
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+	ui = true
 [color "diff"]
 	meta = 11
 	frag = magenta bold
@@ -49,9 +25,43 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
-[pull]
-	rebase = true
+[commit]
+	gpgsign = true
+[core]
+    editor = vim
+	commentChar = auto
+	excludesfile = ~/.gitignore
+	ignorecase = false
+[diff]
+	compactionHeuristic = true
+[gpg]
+	format = ssh
+	#program = /usr/local/bin/gpg
+[gpg "ssh"]
+	allowedSignersFile = "~/.config/git/allowed-signers"
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [init]
 	defaultBranch = main
+[pager]
+	branch = false
+[pull]
+	rebase = true
+[push]
+	default = simple
 [rebase]
-  autostash = true
+	autostash = true
+[user]
+	email = {{ .email }}
+	name = {{ .name }}
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDkPKXFmhMDXImnHFuqsUVL2Z0GzYBwFTDxZaxIcYAOJ
+
+# Filters: lfs, media
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
