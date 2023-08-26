@@ -81,6 +81,3 @@ antidote load
 
 # Initialize starship
 eval "$(starship init zsh)"
-
-# Initialize asdf
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
