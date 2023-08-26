@@ -50,11 +50,9 @@ brew install font-sf-pro
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
 
 # Mac App Store apps
-{{ if .mas -}}
 brew install mas
 mas install 420212497 # Byword
 mas install 640199958 # Developer
-{{ end -}}
 
 
 # Miscellaneous stuff that may require user input
