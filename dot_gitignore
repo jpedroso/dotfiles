@@ -1,9 +1,0 @@
-*.DS_Store
-*.sw[nop]
-.env
-db/*.sqlite3
-log/*.log
-rerun.txt
-tmp/**/*
-!tmp/cache/.keep
-.ruby-version
