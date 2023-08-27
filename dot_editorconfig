@@ -2,8 +2,22 @@ root = true
 
 [*]
 charset = utf-8
-indent_style = space
 end_of_line = lf
+indent_size = 2
+indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
 
+# 4 space indentation
+[*.{py,java,r,R}]
+indent_size = 4
+indent_style = space
+
+# 2 space indentation
+[*.{rb,js,json,y{a,}ml,html,swift,c,h,m,mm}]
+indent_size = 2
+
+[*.{md}]
+indent_size = 2
+indent_style = space
+trim_trailing_whitespace = false
