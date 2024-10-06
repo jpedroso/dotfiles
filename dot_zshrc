@@ -8,13 +8,13 @@ export EDITOR="code -w"
 export TERM=xterm-256color
 
 # A few helpful aliases
-alias g="git"
-alias ls="exa -l"
-alias l="exa -l"
-alias ll="exa -la"
+alias buu="brew update && brew upgrade"
 alias c="code"
 alias cm="chezmoi"
-alias buu="brew update && brew upgrade"
+alias g="git"
+alias lg="lazygit"
+alias ll="exa -la"
+alias ls="exa -l"
 
 # A few services
 # More of these here: https://github.com/chubin/awesome-console-services
