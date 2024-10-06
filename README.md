@@ -1,22 +1,19 @@
 # Dotfiles 👋
 
-This is my current dotfile setup. It is opinionated and I can't guarantee
-that it will work for anyone who isn't me. But use these to experiment,
-learn, and heck - maybe you just want the exact same setup I use. In that
-case, go all out and look below for instructions.
+This is my current dotfile setup.
 
 ### What's included
 
-- Vim setup (see `install-vim` and `configs/vimrc`)
+- macOS defaults
 - Git configuration
+- SSH config to use 1password agent
 - Zsh shell setup (with `antidote`)
-- A couple of terminal fonts
+- A few of my favorite monospaced fonts
+- macOS apps installed via brew including from the Mac App store
 
 ### Installation process
 
-I'm in the process of converting my dotfiles to [chezmoi](https://www.chezmoi.io/),
-which is honestly fantastic. I recommend you go through the documentation to figure
-out exactly how it works, but the very quick way to install these is as follows:
+Just run
 
 ```
 BINDIR=~/.bin sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply jpedroso
