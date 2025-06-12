@@ -13,8 +13,8 @@ alias c="code"
 alias cm="chezmoi"
 alias g="git"
 alias lg="lazygit"
-alias ll="exa -la"
-alias ls="exa -l"
+alias ll="eza -la"
+alias ls="eza -l"
 
 # A few services
 # More of these here: https://github.com/chubin/awesome-console-services
