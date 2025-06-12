@@ -1,7 +1,5 @@
 robbyrussell/oh-my-zsh path:plugins/git
 
-skywind3000/z.lua
-
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 zsh-users/zsh-history-substring-search
