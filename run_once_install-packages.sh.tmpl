@@ -19,6 +19,7 @@ brew install fd
 brew install xcodes
 
 # Install casks
+{{ if .casks -}}
 brew install --cask 1password
 brew install --cask 1password-cli
 brew install --cask cleanshot
@@ -31,6 +32,7 @@ brew install --cask sketch
 brew install --cask slack
 brew install --cask sublime-merge
 brew install --cask visual-studio-code
+{{ end -}}
 
 # Install fonts
 brew tap homebrew/cask-fonts
